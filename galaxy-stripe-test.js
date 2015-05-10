@@ -42,7 +42,7 @@ if (Meteor.isServer) {
     },
 
     'subscribeUser': function(stripeToken) {
-      var Stripe = StripeAPI('sk_test_SaH2T7BO5EklaOPjqN1kwTL6');
+      var Stripe = StripeAPI(Meteor.settings.priKey);
       Stripe.customers.create({
         source: stripeToken,
         plan: 'paugmeSub',
